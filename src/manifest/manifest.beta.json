@@ -1,0 +1,12 @@
+{
+  "name": "Auto Refresh Beta",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "auto-refresh-beta@project-factory",
+      "strict_min_version": "115.0"
+    }
+  },
+  "data_collection_permissions": {
+    "required": ["none"]
+  }
+}

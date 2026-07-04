@@ -1,7 +1,7 @@
-name: Task / Improvement
-description: Track refactors, improvements, and technical tasks
-title: "chore: "
-labels: ["task"]
+name: Task
+description: Track repository, tooling, testing, packaging, or documentation work
+title: 'task: '
+labels: ['type: task']
 body:
   - type: dropdown
     id: area
@@ -9,65 +9,64 @@ body:
       label: Area
       description: Which part of the project is affected?
       options:
-        - aur rpc
-        - package sources
-        - ranking
-        - search
-        - tui
-        - keyboard input
-        - mouse input
-        - clipboard
-        - history
-        - config
-        - themes
+        - background
+        - popup
+        - options
+        - scheduling
+        - storage
+        - tabs
+        - sessions
+        - alarms
+        - notifications
+        - ui
+        - accessibility
+        - testing
+        - docker
+        - packaging
+        - distribution
         - docs
-        - ci
-        - other
+        - release
     validations:
       required: true
-
   - type: textarea
     id: context
     attributes:
       label: Context
       description: Why is this change needed?
-      placeholder: Explain the current limitation or pain point.
     validations:
       required: true
-
   - type: textarea
-    id: proposal
+    id: goal
     attributes:
-      label: Proposed change
-      description: What should be changed?
-      placeholder: Describe the intended solution.
+      label: Goal
+      description: What outcome should this task achieve?
     validations:
       required: true
-
+  - type: textarea
+    id: scope
+    attributes:
+      label: Implementation scope
+      description: What is included in this task?
+    validations:
+      required: true
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+      description: What is explicitly excluded?
   - type: textarea
     id: acceptance
     attributes:
       label: Acceptance criteria
-      description: How do we know this task is done?
-      placeholder: |
-        - [ ] ...
+      description: How do we know this task is complete?
+      value: |
         - [ ] ...
         - [ ] ...
     validations:
       required: true
-
   - type: textarea
-    id: notes
+    id: validation
     attributes:
-      label: Notes
-      description: Optional implementation details, references, or edge cases.
-      placeholder: Add any extra context here.
-
-  - type: checkboxes
-    id: readonly
-    attributes:
-      label: Read-only safety
-      description: aurview does not manage packages.
-      options:
-        - label: This task keeps aurview read-only.
-          required: true
+      label: Validation commands
+      description: Commands that verify the work.
+      render: bash

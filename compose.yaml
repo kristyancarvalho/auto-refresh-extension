@@ -1,0 +1,17 @@
+name: auto-refresh
+
+services:
+  workspace:
+    build:
+      context: .
+      dockerfile: docker/test-runner.Dockerfile
+    working_dir: /app
+    environment:
+      CI: 'true'
+    volumes:
+      - .:/app
+      - workspace-node-modules:/app/node_modules
+    command: npm run verify
+
+volumes:
+  workspace-node-modules:

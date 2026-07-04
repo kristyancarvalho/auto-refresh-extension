@@ -1,0 +1,17 @@
+{
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "auto-refresh-e2e@project-factory",
+      "strict_min_version": "115.0"
+    }
+  },
+  "permissions": ["alarms", "notifications", "sessions", "storage", "tabs"],
+  "host_permissions": ["http://localhost/*", "http://127.0.0.1/*"],
+  "content_scripts": [
+    {
+      "matches": ["http://localhost/*", "http://127.0.0.1/*"],
+      "js": ["e2e-bridge.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
