@@ -1,7 +1,6 @@
-import { EXTENSION_NAME } from '../shared/constants';
+import { createBackground, initialize } from './bootstrap';
+import { registerListeners } from './listeners';
 
-function initialize(): void {
-  browser.action.setTitle({ title: EXTENSION_NAME });
-}
-
-initialize();
+const deps = createBackground();
+registerListeners(deps);
+void initialize(deps);
