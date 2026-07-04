@@ -1,0 +1,9 @@
+node_modules/
+dist/
+artifacts/
+coverage/
+specs/
+web-ext-artifacts/
+*.xpi
+*.zip
+package-lock.json
