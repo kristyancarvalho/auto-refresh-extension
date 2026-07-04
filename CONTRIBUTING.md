@@ -63,11 +63,11 @@ gh milestone list
 
 Supported issue types:
 
-| Type | Use when |
-|---|---|
-| `task` | Repository, tooling, documentation, testing, release, maintenance, or operational work. |
-| `enhancement` | New or improved extension behavior or user experience. |
-| `bug` | Incorrect behavior, regression, broken workflow, invalid state, or failed compatibility. |
+| Type          | Use when                                                                                 |
+| ------------- | ---------------------------------------------------------------------------------------- |
+| `task`        | Repository, tooling, documentation, testing, release, maintenance, or operational work.  |
+| `enhancement` | New or improved extension behavior or user experience.                                   |
+| `bug`         | Incorrect behavior, regression, broken workflow, invalid state, or failed compatibility. |
 
 Issue titles should be concise and specific:
 
@@ -501,13 +501,13 @@ Every behavior change must include tests at the appropriate level.
 
 Required test layers:
 
-| Layer | Purpose |
-|---|---|
-| Unit | Domain rules, scheduling, validation, state transitions, migrations, utilities. |
-| Integration | Background use cases with fake browser adapters. |
-| Browser UI | Popup and options behavior in a browser environment. |
-| End-to-end | Real Firefox extension installation and refresh behavior. |
-| Smoke | Manual Firefox and Zen Browser release checks. |
+| Layer       | Purpose                                                                         |
+| ----------- | ------------------------------------------------------------------------------- |
+| Unit        | Domain rules, scheduling, validation, state transitions, migrations, utilities. |
+| Integration | Background use cases with fake browser adapters.                                |
+| Browser UI  | Popup and options behavior in a browser environment.                            |
+| End-to-end  | Real Firefox extension installation and refresh behavior.                       |
+| Smoke       | Manual Firefox and Zen Browser release checks.                                  |
 
 Minimum validation before merge:
 
@@ -671,7 +671,7 @@ Suggested body:
 
 ## Issue
 
-Implements issue_<id>
+Implements issue\_<id>
 
 ## Validation
 
@@ -766,4 +766,3 @@ Before closing an issue or merging a stage branch, verify:
 Prefer small, traceable changes over large mixed commits.
 
 The issue, milestone, stage branch, commit, tests, documentation, and release history should describe the same change consistently.
-

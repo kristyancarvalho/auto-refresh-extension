@@ -1,94 +1,70 @@
 name: Bug report
-description: Report a problem in aurview
-title: "bug: "
-labels: ["bug"]
+description: Report incorrect behavior, a regression, or a compatibility problem
+title: 'bug: '
+labels: ['type: bug']
 body:
   - type: dropdown
     id: area
     attributes:
       label: Area
-      description: Which part of the project is affected?
+      description: Which part of the extension is affected?
       options:
-        - aur rpc
-        - package sources
-        - ranking
-        - search
-        - tui
-        - keyboard input
-        - mouse input
-        - clipboard
-        - history
-        - config
-        - themes
-        - docs
-        - ci
-        - other
+        - background
+        - popup
+        - options
+        - scheduling
+        - storage
+        - tabs
+        - sessions
+        - alarms
+        - notifications
+        - ui
+        - accessibility
+        - packaging
     validations:
       required: true
-
-  - type: textarea
-    id: description
+  - type: dropdown
+    id: platform
     attributes:
-      label: Description
-      description: What happened?
-      placeholder: Something isn't working
+      label: Browser
+      options:
+        - Firefox
+        - Zen Browser
+        - Both
     validations:
       required: true
-
   - type: textarea
     id: steps
     attributes:
       label: Steps to reproduce
-      description: How can we reproduce the problem?
-      placeholder: |
-        1. ...
-        2. ...
-        3. ...
+      value: |
+        1.
+        2.
+        3.
     validations:
       required: true
-
   - type: textarea
     id: expected
     attributes:
       label: Expected behavior
-      description: What should have happened instead?
-      placeholder: Describe the expected result.
     validations:
       required: true
-
   - type: textarea
     id: actual
     attributes:
       label: Actual behavior
-      description: What happened instead?
-      placeholder: Describe the observed result.
     validations:
       required: true
-
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      value: |
+        Browser version:
+        Operating system:
+        Extension version:
   - type: textarea
     id: logs
     attributes:
-      label: Logs / output
-      description: Paste any error messages, stack traces, or screenshots.
+      label: Logs or screenshots
       render: shell
-
-  - type: textarea
-    id: env
-    attributes:
-      label: Environment
-      description: Share relevant environment details.
-      placeholder: |
-        OS:
-        Terminal:
-        aurview version / commit:
-        Go version:
-        Config:
-
-  - type: checkboxes
-    id: readonly
-    attributes:
-      label: Read-only safety
-      description: Confirm this report does not request package installation or execution behavior.
-      options:
-        - label: This issue is about search, inspection, display, history, metadata, config or clipboard behavior only.
-          required: true
