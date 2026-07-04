@@ -1,80 +1,72 @@
-name: Feature suggestion
-description: Suggest a feature or improvement
-title: "feat: "
-labels: ["enhancement"]
+name: Enhancement
+description: Suggest new or improved extension behavior
+title: 'enhancement: '
+labels: ['type: enhancement']
 body:
   - type: dropdown
     id: area
     attributes:
       label: Area
-      description: Which part of the project should be improved?
+      description: Which part of the extension should change?
       options:
-        - aur rpc
-        - package sources
-        - ranking
-        - search
-        - tui
-        - keyboard input
-        - mouse input
-        - clipboard
-        - history
-        - config
-        - themes
-        - docs
-        - ci
-        - other
+        - background
+        - popup
+        - options
+        - scheduling
+        - storage
+        - tabs
+        - sessions
+        - alarms
+        - notifications
+        - ui
+        - accessibility
     validations:
       required: true
-
   - type: textarea
-    id: problem
+    id: context
     attributes:
-      label: Problem / motivation
-      description: What issue or limitation does this improve?
-      placeholder: Explain why this change is useful.
+      label: Context
+      description: What limitation or need motivates this change?
     validations:
       required: true
-
   - type: textarea
-    id: proposal
+    id: goal
     attributes:
-      label: Proposed change
-      description: What should be implemented or changed?
-      placeholder: Describe the feature or improvement.
+      label: Goal
+      description: What should the extension do after this change?
     validations:
       required: true
-
   - type: textarea
-    id: alternatives
+    id: scope
     attributes:
-      label: Alternatives considered
-      description: Did you consider other approaches?
-      placeholder: Optional.
-
+      label: Implementation scope
+      description: What behavior and files are involved?
+    validations:
+      required: true
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+      description: What is explicitly excluded?
   - type: textarea
     id: acceptance
     attributes:
       label: Acceptance criteria
-      description: What needs to be true for this issue to be done?
-      placeholder: |
-        - [ ] ...
+      value: |
         - [ ] ...
         - [ ] ...
     validations:
       required: true
-
   - type: textarea
-    id: notes
+    id: testing
     attributes:
-      label: Notes
-      description: Optional implementation details, references, or edge cases.
-      placeholder: Add any extra context here.
-
+      label: Testing notes
+      description: How should this be tested?
   - type: checkboxes
-    id: readonly
+    id: privacy
     attributes:
-      label: Read-only safety
-      description: aurview must remain a metadata-only package discovery tool.
+      label: Local-first safety
+      description: Auto Refresh stays local-first and permission-minimal.
       options:
-        - label: This proposal does not add install, download, clone, build, update or remove behavior.
+        - label: This change adds no telemetry, no remote transmission, and no unnecessary permissions.
           required: true
