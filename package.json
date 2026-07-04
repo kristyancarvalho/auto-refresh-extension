@@ -1,0 +1,52 @@
+{
+  "name": "auto-refresh-extension",
+  "version": "1.0.0",
+  "description": "Local-first Firefox and Zen Browser extension that automatically reloads selected tabs at configurable intervals with duration, count, and deadline stop conditions.",
+  "type": "module",
+  "private": true,
+  "license": "MPL-2.0",
+  "author": "kristyancarvalho",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs production",
+    "build:e2e": "node scripts/build.mjs e2e",
+    "build:dev": "node scripts/build.mjs development",
+    "build:watch": "node scripts/build.mjs development --watch",
+    "dev:firefox": "node scripts/run-browser.mjs firefox",
+    "dev:zen": "node scripts/run-browser.mjs zen",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "node --import tsx tests/e2e/run.ts",
+    "test:e2e:local": "node --import tsx tests/e2e/run.ts",
+    "test:e2e:remote": "E2E_REMOTE=1 node --import tsx tests/e2e/run.ts",
+    "lint:extension": "web-ext lint --source-dir dist --self-hosted",
+    "package": "node scripts/package.mjs production",
+    "package:source": "node scripts/create-source-archive.mjs",
+    "validate:manifest": "node scripts/validate-manifest.mjs",
+    "validate:no-comments": "node scripts/validate-no-comments.mjs",
+    "validate:no-placeholders": "node scripts/validate-no-placeholders.mjs",
+    "validate:production-artifact": "node scripts/validate-production-artifact.mjs",
+    "check": "npm run format:check && npm run typecheck && npm run test",
+    "verify": "npm run format:check && npm run typecheck && npm run test:coverage && npm run build && npm run validate:manifest && npm run lint:extension && npm run validate:no-comments && npm run validate:no-placeholders && npm run validate:production-artifact"
+  },
+  "devDependencies": {
+    "@types/firefox-webext-browser": "120.0.4",
+    "@types/node": "24.3.0",
+    "@types/selenium-webdriver": "4.1.28",
+    "@vitest/coverage-v8": "2.1.9",
+    "esbuild": "0.24.2",
+    "happy-dom": "15.11.7",
+    "prettier": "3.4.2",
+    "selenium-webdriver": "4.28.1",
+    "tsx": "4.19.2",
+    "typescript": "5.7.3",
+    "vitest": "2.1.9",
+    "web-ext": "8.3.0"
+  }
+}
