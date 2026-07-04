@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: AUR RPC documentation
+    url: https://wiki.archlinux.org/title/Aurweb_RPC_interface
+    about: Reference for aurview's read-only package metadata source.
