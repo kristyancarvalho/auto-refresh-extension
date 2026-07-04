@@ -35,6 +35,12 @@
   color: var(--color-text-muted);
 }
 
+.ar-selected-count {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
 .ar-section {
   display: flex;
   flex-direction: column;
